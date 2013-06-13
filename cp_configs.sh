@@ -2,4 +2,3 @@
 
 cp ~/.bashrc .
 cp ~/.vimrc .
-cp -r ~/.vim .
