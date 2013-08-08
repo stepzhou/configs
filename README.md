@@ -1,1 +1,4 @@
-Up-to-date versions of my config files
+Configs
+=======
+
+Here I keep a relatively up-to-date repo of my config files.
