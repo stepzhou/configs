@@ -1,19 +1,32 @@
+""" REQUIRED
+set nocompatible
 filetype off
 
-call pathogen#infect()
-call pathogen#helptags()
+""" BUNDLE MANAGEMENT
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
+Bundle 'gmarik/vundle'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'majutsushi/tagbar'
+
+" indent plugins load by filetypes
 filetype plugin indent on
-syntax on
 
-colorscheme desert
+""" GENERAL SETTINGS
 
 " disable auto comment insertion
 autocmd FileType * setlocal formatoptions-=cro
 
-" LOOKS AND FEELS
+syntax on
 
-" line numbers
+colorscheme desert
+
 set number
 
 " show command
@@ -36,23 +49,19 @@ set expandtab
 set softtabstop=4
 set shiftwidth=4
 
-" KEY MAPPINGS
+""" KEY MAPPINGS
 
 " toggle paste
-set pastetoggle=<F3>
+set pastetoggle=<F2>
+
+" toggle NERDTree
+map <F8> :NERDTreeToggle<CR>
+
+" toggle tagbar
+map <F9> :TagbarToggle<CR>
 
 " Toggle line num
 nmap <C-L><C-L> :set invnumber<CR>
-
-" disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
 
 " Faster scrolling
 nmap J 5j
@@ -69,6 +78,8 @@ nnoremap <silent> <C-Right> :tabnext<CR>
 nnoremap <silent> <C-Left> :tabprevious<CR>
 nnoremap <silent> <C-t> :tabnew<CR>
 
-" Latex settings
+""" PLUGINS
+
+" latex
 let g:tex_flavor = "latex"
 set suffixes+=.log,.aux,.bbl,.blg,.idx,.ilg,.ind,.out,.pdf
