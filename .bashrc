@@ -89,7 +89,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 15 ]; then CurDir=${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
 # export PS1="\u@\h: \$CurDir\$ "
 
-# extract
+# extract compressed files
 extract () {
     if [ -f $1 ] ; then
       case $1 in

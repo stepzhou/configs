@@ -28,17 +28,18 @@ filetype plugin indent on
 
 " force 256-colors in gnome
 " turned off bc I find airline colors distracting
-"if $COLORTERM == 'gnome-terminal'
-"    set t_Co=256
-"endif
+" if $COLORTERM == 'gnome-terminal'
+"     set t_Co=256
+" endif
 
 """ PLUGINS
 
 " vim-airline
 
 set laststatus=2
-let g:airline_enable_tagbar=1
 set ttimeoutlen=50
+let g:airline_enable_tagbar=1
+let g:airline_theme='molokai'
 
 " latex
 let g:tex_flavor = "latex"
