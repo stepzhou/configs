@@ -6,19 +6,46 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Vundle itself
 Bundle 'gmarik/vundle'
 
+" plugins
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'majutsushi/tagbar'
+Bundle 'bufexplorer.zip'
+Bundle 'altercation/vim-colors-solarized'
+
+" colorschemes
+Bundle 'tomasr/molokai'
+Bundle 'Pychimp/vim-luna'
 
 " indent plugins load by filetypes
 filetype plugin indent on
 
+" force 256-colors in gnome
+" turned off bc I find airline colors distracting
+"if $COLORTERM == 'gnome-terminal'
+"    set t_Co=256
+"endif
+
+""" PLUGINS
+
+" vim-airline
+
+set laststatus=2
+let g:airline_enable_tagbar=1
+set ttimeoutlen=50
+
+" latex
+let g:tex_flavor = "latex"
+set suffixes+=.log,.aux,.bbl,.blg,.idx,.ilg,.ind,.out,.pdf
+
 """ GENERAL SETTINGS
+" Some are overwritten in ftplugin
 
 " disable auto comment insertion
 autocmd FileType * setlocal formatoptions-=cro
@@ -27,26 +54,26 @@ syntax on
 
 colorscheme desert
 
+" line numbers
 set number
 
-" show command
+" show partial command on bot of screen
 set showcmd
 
+" opening new buffer hides instead of close
 set hidden
 
 " tab completion
 set wildmenu
 set wildmode=list:longest,full
 
-" smartly indent yo stuff
-set smartindent
-
 " spaces not tabs
-set smarttab
 set expandtab
 
-" default tab lengths
+" makes spaces seem like real tabs
 set softtabstop=4
+
+" > and < size to indent/unindent
 set shiftwidth=4
 
 """ KEY MAPPINGS
@@ -78,8 +105,3 @@ nnoremap <silent> <C-Right> :tabnext<CR>
 nnoremap <silent> <C-Left> :tabprevious<CR>
 nnoremap <silent> <C-t> :tabnew<CR>
 
-""" PLUGINS
-
-" latex
-let g:tex_flavor = "latex"
-set suffixes+=.log,.aux,.bbl,.blg,.idx,.ilg,.ind,.out,.pdf
