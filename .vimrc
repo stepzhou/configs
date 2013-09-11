@@ -11,13 +11,15 @@ Bundle 'gmarik/vundle'
 
 " plugins
 Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
+" Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'majutsushi/tagbar'
-Bundle 'bufexplorer.zip'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bufexplorer.zip'
+Bundle 'Screen-vim---gnu-screentmux'
+Bundle 'Vim-R-plugin'
 
 " colorschemes
 Bundle 'tomasr/molokai'
@@ -36,10 +38,10 @@ filetype plugin indent on
 
 " vim-airline
 
-set laststatus=2
-set ttimeoutlen=50
-let g:airline_enable_tagbar=1
-let g:airline_theme='molokai'
+" set laststatus=2
+" set ttimeoutlen=50
+" let g:airline_enable_tagbar=1
+" let g:airline_theme='molokai'
 
 " latex
 let g:tex_flavor = "latex"

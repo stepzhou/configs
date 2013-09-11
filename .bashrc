@@ -53,6 +53,8 @@ alias rm='rm -I'
 # custom aliases
 alias p='pwd'
 alias v='vim'
+alias py='python'
+alias py3='python3'
 alias sub='/usr/lib/sublime-text-2/sublime_text'
 
 # increase logitech mouse dpi
