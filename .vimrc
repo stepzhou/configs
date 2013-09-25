@@ -1,4 +1,4 @@
-""" REQUIRED
+"" REQUIRED
 set nocompatible
 filetype off
 
@@ -17,6 +17,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'majutsushi/tagbar'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'Screen-vim---gnu-screentmux'
 Bundle 'Vim-R-plugin'
@@ -46,6 +47,12 @@ filetype plugin indent on
 " latex
 let g:tex_flavor = "latex"
 set suffixes+=.log,.aux,.bbl,.blg,.idx,.ilg,.ind,.out,.pdf
+
+" rainbow parens
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 """ GENERAL SETTINGS
 " Some are overwritten in ftplugin
@@ -104,7 +111,5 @@ nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 
 " Next, previous, new tab
-nnoremap <silent> <C-Right> :tabnext<CR>
-nnoremap <silent> <C-Left> :tabprevious<CR>
-nnoremap <silent> <C-t> :tabnew<CR>
+nmap <C-t> :tabnew<CR>
 
