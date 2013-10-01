@@ -55,7 +55,7 @@ alias p='pwd'
 alias v='vim'
 alias py='python'
 alias py3='python3'
-alias sub='/usr/lib/sublime-text-2/sublime_text'
+alias sub='/usr/bin/sublime'
 
 # increase logitech mouse dpi
 alias dpi='sudo lomoco -h'
@@ -117,3 +117,8 @@ extract () {
 export PS1="\W \$ "
 
 export EDITOR=vim
+# case $TERM in
+#     xterm|screen|rxvt-unicode)
+#         TERM="${TERM}-256color" ;;
+# esac
+export TERM='xterm-color'
