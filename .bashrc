@@ -27,6 +27,10 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
 # start terminal in tmux
 [[ -z "$TMUX" ]] && exec tmux
 
@@ -72,6 +76,12 @@ alias open='xdg-open'
 # makes sudo work with alias
 alias sudo='sudo '
 
+# I'm a lazy bum
+alias c='clear'
+
+# git
+alias gc='git commit -m '
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -115,10 +125,5 @@ extract () {
 
 # not using PS1 from above for now
 export PS1="\W \$ "
-
 export EDITOR=vim
-# case $TERM in
-#     xterm|screen|rxvt-unicode)
-#         TERM="${TERM}-256color" ;;
-# esac
-export TERM='xterm-color'
+

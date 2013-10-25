@@ -22,6 +22,9 @@ Bundle 'Screen-vim---gnu-screentmux'
 Bundle 'Vim-R-plugin'
 Bundle 'lsdr/monokai'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'godlygeek/csapprox'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'flazz/vim-colorschemes'
 
 " colorschemes
 Bundle 'tomasr/molokai'
@@ -32,7 +35,7 @@ filetype plugin indent on
 
 " color terminals
 if $COLORTERM == 'gnome-terminal'
-    set t_Co=16
+    set t_Co=256
 endif
 
 """ PLUGINS
@@ -52,7 +55,7 @@ autocmd FileType * setlocal formatoptions-=cro
 
 syntax on
 
-colorscheme desert
+colorscheme jellybeans
 
 " line numbers
 set number
@@ -84,10 +87,10 @@ set shiftwidth=4
 let mapleader=','
 
 " toggles
-map <leader>d :NERDTreeToggle<CR>
-map <leader>f :TagbarToggle<CR>
-map <leader>l :set invnumber<CR>
-set pastetoggle=<leader>p
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :TagbarToggle<CR>
+nmap <leader>l :set invnumber<CR>
+set pastetoggle=<F2>
 
 " search and replace word under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
