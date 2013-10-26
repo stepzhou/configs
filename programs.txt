@@ -1,0 +1,14 @@
+apt:
+    vim
+    tmux
+    redshift
+    gtk-redshift
+    r-base
+    dconf-tools
+    compiz-settings-manager 
+    pidgin
+    banshee
+
+deb:
+    dropbox
+    google-chrome
