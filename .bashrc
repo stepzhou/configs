@@ -58,7 +58,7 @@ alias rm='rm -I'
 alias p='pwd'
 alias v='vim'
 alias py='python'
-alias py3='python3'
+alias py3='python3.3'
 alias sub='/usr/bin/sublime'
 
 # increase logitech mouse dpi
@@ -81,6 +81,11 @@ alias c='clear'
 
 # git
 alias gc='git commit -m '
+
+# toggle redshift
+alias tred='pkill -USR1 redshift'
+
+alias escap='setxkbmap -option caps:swapescape'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

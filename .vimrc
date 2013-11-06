@@ -24,6 +24,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/csapprox'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'hynek/vim-python-pep8-indent'
 
 " colorschemes
 Bundle 'tomasr/molokai'

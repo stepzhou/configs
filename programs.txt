@@ -8,7 +8,17 @@ apt:
     compiz-settings-manager 
     pidgin
     banshee
+    nvidia-current
+    gimp
+    curl
+    vlc 
+    eclipse
+    default-jre
+    python3-pip
 
 deb:
     dropbox
     google-chrome
+
+ppa:
+    my-weather-indicator
