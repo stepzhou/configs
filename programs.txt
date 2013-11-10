@@ -1,6 +1,7 @@
 apt:
     vim
     tmux
+    git
     redshift
     gtk-redshift
     r-base
@@ -15,6 +16,13 @@ apt:
     eclipse
     default-jre
     python3-pip
+    python-virtualenv
+    nodejs
+    shutter
+    ubuntu-restricted-extras
+    exuberant-ctags
+    xclip
+    qgis
 
 deb:
     dropbox
