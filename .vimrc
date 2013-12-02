@@ -21,6 +21,7 @@ Bundle 'godlygeek/csapprox'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'moll/vim-node'
 Bundle 'Vim-R-plugin'
+Bundle "pangloss/vim-javascript"
 
 " colorschemes
 Bundle 'altercation/vim-colors-solarized'
