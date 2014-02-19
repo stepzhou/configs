@@ -46,50 +46,16 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# safer alias
-alias rm='rm -I'
-
-# custom aliases
-alias p='pwd'
-alias v='vim'
-alias py='python'
-alias py3='python3.3'
-alias sub='/usr/bin/sublime'
-
-# increase logitech mouse dpi
-alias dpi='sudo lomoco -h'
-
-# xclip default enables ctrl+c ctrl+v
-alias xclip='xclip -selection c'
-
-# monitor extend left
-alias detl='disper -e -t left'
-
-# open file manager from terminal
-alias open='xdg-open'
-
-# makes sudo work with alias
-alias sudo='sudo '
-
-# I'm a lazy bum
-alias c='clear'
-
-# git
-alias gc='git commit -m '
-
-# toggle redshift
-alias tred='pkill -USR1 redshift'
-
-alias escap='setxkbmap -option caps:swapescape'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+ 
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -98,13 +64,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# enable to only show last 15 characters of prompt
-# PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 15 ]; then CurDir=${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
-# export PS1="\u@\h: \$CurDir\$ "
 
 # extract compressed files
 extract () {
@@ -128,7 +89,25 @@ extract () {
      fi
 }
 
-# not using PS1 from above for now
-export PS1="\W \$ "
+# z.sh for jumping around
+. ~/src/z/z.sh
+
+# PS1
+PS1="\[\033[01;37m\]\A \[\033[01;34m\]\w \$\[\033[00m\] "
+
+# editor
 export EDITOR=vim
 
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin 
+# General scripting path
+PATH="$PATH:$HOME/bin"
+# Added by the Heroku Toolbelt
+PATH="$PATH:/usr/local/heroku/bin"
+export PATH
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/src
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+source /usr/local/bin/virtualenvwrapper.sh

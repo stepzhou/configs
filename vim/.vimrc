@@ -59,30 +59,28 @@ syntax on
 
 colorscheme jellybeans
 
-" line numbers
-set number
+set shortmess+=I            " remove welcome screen
 
-" show partial command on bot of screen
-set showcmd
+" gvim options
+set guioptions-=m           " remove menu bar
+set guioptions-=T           " remove toolbar
+set guioptions-=r           " remove right-hand scroll bar
 
-" opening new buffer hides instead of close
-set hidden
+set number                  " line numbers
+set showcmd                 " show partial command on bot of screen
+set hidden                  " opening new buffer hides instead of close
 
 " tab completion
 set wildmenu
 set wildmode=list:longest,full
 
-" highlight search
-set hlsearch
+set hlsearch                " highlight search
 
-" spaces not tabs
-set expandtab
-
-" makes spaces seem like real tabs
-set softtabstop=4
-
-" > and < size to indent/unindent
-set shiftwidth=4
+" indention
+set expandtab               " spaces not tabs
+set softtabstop=4           " makes spaces seem like real tabs
+set shiftwidth=4            " > and < size to indent/unindent
+set tabstop=4               " number of spaces for a tab
 
 """ KEY MAPPINGS
 
@@ -94,13 +92,21 @@ nmap <leader>f :TagbarToggle<CR>
 nmap <leader>l :set invnumber<CR>
 set pastetoggle=<F2>
 
+" search word under cursor
+nnoremap <Leader>s /<C-r><C-w>
+
 " search and replace word under cursor
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+
 " search and replace visual selection
 vnoremap <leader>r "hy:%s/\<<C-r>h\>/
 
+" faster buffer switch
+nnoremap <leader>e :ls<CR>:b<Space>
+
 " turn off highlight after search
 nnoremap <CR> :noh<CR><CR>
+nnoremap <leader>c :noh<CR><CR>
 
 " Faster scrolling
 nmap J 5j
@@ -123,3 +129,5 @@ nnoremap <C-l> :tabnext<CR>
 nnoremap <silent> <A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-l> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
+" replace colon with semicolon
+map ; :
