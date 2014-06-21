@@ -1,0 +1,21 @@
+alias ls='ls -G'
+
+# z.sh for jumping around
+if [ -f ~/Dev/z/z.sh ]; then
+    . ~/Dev/z/z.sh
+fi
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin 
+# General scripting path
+PATH="$PATH:$HOME/bin"
+export PATH
+
+# virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Source
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
