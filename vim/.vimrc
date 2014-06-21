@@ -15,13 +15,13 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'majutsushi/tagbar'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'Screen-vim---gnu-screentmux'
-Bundle 'godlygeek/csapprox'
+" Bundle 'bufexplorer.zip'
+" Bundle 'Screen-vim---gnu-screentmux'
+" Bundle 'godlygeek/csapprox'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'moll/vim-node'
-Bundle 'Vim-R-plugin'
-Bundle "pangloss/vim-javascript"
+" Bundle 'Vim-R-plugin'
+" Bundle "pangloss/vim-javascript"
 
 " colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -69,6 +69,7 @@ set guioptions-=r           " remove right-hand scroll bar
 set number                  " line numbers
 set showcmd                 " show partial command on bot of screen
 set hidden                  " opening new buffer hides instead of close
+set ruler                   " show line and column nums
 
 " tab completion
 set wildmenu
@@ -106,7 +107,7 @@ nnoremap <leader>e :ls<CR>:b<Space>
 
 " turn off highlight after search
 nnoremap <CR> :noh<CR><CR>
-nnoremap <leader>c :noh<CR><CR>
+nnoremap <leader>c :bp\|bd #<CR>
 
 " Faster scrolling
 nmap J 5j

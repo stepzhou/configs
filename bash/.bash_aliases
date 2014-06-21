@@ -4,7 +4,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # safer alias
-alias rm='rm -I'
+# alias rm='rm -I'
 
 # shortcuts
 alias p='pwd'
@@ -23,7 +23,7 @@ alias xclip='xclip -selection c'
 alias detl='disper -e -t left'
 
 # open file manager from terminal
-alias open='xdg-open'
+# alias open='xdg-open'
 
 # makes sudo work with alias
 alias sudo='sudo '
@@ -37,3 +37,6 @@ alias tred='pkill -USR1 redshift'
 
 # command to swap caps lock and escape
 alias escap='setxkbmap -option caps:swapescape'
+
+# OS X only aliases
+alias preview='open -a Preview'

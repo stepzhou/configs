@@ -46,6 +46,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+alias ls='ls -G'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -90,10 +91,10 @@ extract () {
 }
 
 # z.sh for jumping around
-. ~/src/z/z.sh
+. ~/Dev/z/z.sh
 
 # PS1
-PS1="\[\033[01;37m\]\A \[\033[01;34m\]\w \$\[\033[00m\] "
+PS1="\[\033[01;37m\]\A \[\033[01;34m\]\W \$\[\033[00m\] "
 
 # editor
 export EDITOR=vim
@@ -108,6 +109,7 @@ export PATH
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/src
+export PROJECT_HOME=$HOME/Source
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 source /usr/local/bin/virtualenvwrapper.sh
+
