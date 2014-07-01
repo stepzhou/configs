@@ -59,8 +59,3 @@ extract () {
 PS1="\[\033[01;37m\]\A \[\033[01;34m\]\W \$\[\033[00m\] "
 export EDITOR=vim
 
-# load common aliases
-if [ -f ./bash_aliases ]; then
-    . ./bash_aliases
-fi
-
