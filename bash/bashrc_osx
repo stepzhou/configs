@@ -1,14 +1,15 @@
+# OS X specific aliases
 alias ls='ls -G'
+alias preview='open -a Preview'
 
 # z.sh for jumping around
 if [ -f ~/Dev/z/z.sh ]; then
-    . ~/Dev/z/z.sh
+    source ~/Dev/z/z.sh
 fi
 
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin 
-# General scripting path
-PATH="$PATH:$HOME/bin"
+# Path
+PATH=$PATH:$HOME/.rvm/bin       # Ruby scripting
+PATH="$PATH:$HOME/bin"          # general scripting path
 export PATH
 
 # virtualenvwrapper

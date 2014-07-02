@@ -1,25 +1,18 @@
-# set vim bindings
-set -o vi
+#### bash settings ####
+[ -z "$PS1" ] && return         # if not running interactively, don't do anything
+set -o vi                       # set vim bindings
+PS1="\[\033[01;37m\]\A \[\033[01;34m\]\W \$\[\033[00m\] "
+export EDITOR=vim
 
-# if not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
-# don't put duplicate lines in the history.
+#### History #####
 HISTCONTROL=ignoredups:ignorespace
+shopt -s histappend             # append to the history file, don't overwrite it
+HISTSIZE=1000                   # history length
+HISTFILESIZE=2000               # history file size
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# sets history length
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#### Display #####
+shopt -s checkwinsize           # update window size after command if necessary
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"    # less more friendly for non-text files
 
 # use 256 color terminal if can
 if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
@@ -31,10 +24,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# start terminal in tmux if installed
-[[ -z "$TMUX" ]] && exec tmux
-
-# extract compressed files
+#### Functions ####
 extract () {
     if [ -f $1 ] ; then
       case $1 in
@@ -56,6 +46,8 @@ extract () {
      fi
 }
 
-PS1="\[\033[01;37m\]\A \[\033[01;34m\]\W \$\[\033[00m\] "
-export EDITOR=vim
+# start terminal in tmux if installed
+if [ type foo >/dev/null 2>&1 && -z "$TMUX#" ]; then
+    exec tmux
+fi
 
